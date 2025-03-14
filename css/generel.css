@@ -1,0 +1,113 @@
+/* CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* CSS */
+
+:root {
+    --white: #ffffff;
+    --yellow: #EEF208;
+}
+
+main {
+    max-width: 1300px;
+    background-color: #030900;
+}
+
+h1 {
+    font-family: "Protest Guerrilla", sans-serif;
+}
+
+h2 {
+    font-family: "Kulim Park", sans-serif;
+}
+
+h3 {
+    font-family: "Protest Strike", sans-serif;
+    color: var(--yellow);
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+/*  */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.hero_content {
+    text-align: center;
+    z-index: 2;
+}
+
+.hero_content h1 {
+    font-size: 8.3rem;
+    padding-top: 2rem;
+    text-shadow: 
+    -1px -1px 0 var(--white),  
+    1px -1px 0 var(--white),
+    -1px 1px 0 var(--white),
+    1px 1px 0 var(--white);
+}
+
+.udforsk a{
+    font-size: 3rem;
+    color: var(--white);
+    margin-top: 5.5rem;
+    padding: 1rem;
+    border-radius: 5vw;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.25);
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.udforsk a:hover {
+    color: var(--yellow);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.background_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.dansk {
+    color: #41B905;
+}
+
+.dance {
+    color: var(--yellow);
+}
+
+.hall {
+    color: #E40606;
+}
