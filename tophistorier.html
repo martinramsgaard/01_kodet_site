@@ -59,6 +59,113 @@
           DANCEHALL-BØLGE
         </h2>
       </section>
+
+      <section class="grid_1-1-1">
+        <div class="flex_col" id="boks1">
+          <video
+            playsinline
+            muted
+            loop
+            class="boks-video"
+            src="videos/(v)hero(hero+main1+article1).mp4"
+          ></video>
+
+          <div class="boks_1-content">
+            <h3>
+              HVAD VAR 2010'ERNES <br />
+              DANSKE DANCEHALL- <br />
+              BØLGE?
+            </h3>
+            <a href="artikel_1.html" class="button"><h2>LÆS MERE</h2></a>
+          </div>
+        </div>
+
+        <div class="flex_col" id="boks2">
+          <video
+            playsinline
+            muted
+            loop
+            class="boks-video"
+            src="videos/(v)main2(main2+article2).mp4"
+          ></video>
+
+          <div class="boks_1-content">
+            <h3>
+              DANCEHALLS STØRSTE <br />
+              KUNSTNERE - <br />
+              HVOR ER DE I DAG?
+            </h3>
+            <a href="artikel_2.html" class="button"><h2>LÆS MERE</h2></a>
+          </div>
+        </div>
+
+        <div class="flex_col" id="boks3">
+          <video
+            playsinline
+            muted
+            loop
+            class="boks-video"
+            src="videos/(v)main3(article3).mp4"
+          ></video>
+
+          <div class="boks_1-content">
+            <h3>
+              STØRSTE <br />
+              DANCEHALL-HITS
+            </h3>
+            <a href="artikel_3.html" class="button"><h2>LYT MED</h2></a>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Nedenstående js er lavet med Chatgbt.
+
+        // Hent alle boks-elementerne og deres tilhørende videoer
+        const boxes = document.querySelectorAll(".flex_col");
+        const videos = document.querySelectorAll(".boks-video");
+        const h2Elements = document.querySelectorAll(".boks_1-content h2");
+
+        // Gå igennem alle bokse og tilføj event listeners for hover-effekter
+        boxes.forEach((box, index) => {
+          const video = videos[index]; // Hent videoen for den pågældende boks
+          const h2 = h2Elements[index]; // Hent h2-elementet for den pågældende boks
+
+          // Når musen er over boksen
+          box.addEventListener("mouseenter", () => {
+            // Skift farven på h2 til gul (kun for den specifikke boks)
+            h2.style.color = "var(--yellow)";
+            // Afspil videoen for den pågældende boks
+            video.play();
+          });
+
+          // Når musen forlader boksen
+          box.addEventListener("mouseleave", () => {
+            // Skift farven på h2 tilbage til sort (kun for den specifikke boks)
+            h2.style.color = "var(--trueblack)";
+            // Stop videoen for den pågældende boks og reset den
+            video.pause();
+            video.currentTime = 0;
+          });
+        });
+
+        // Tilføj hover-effekter for knappen (for at forhindre hover på h2 når musen er over knappen)
+        const buttons = document.querySelectorAll(".button");
+
+        buttons.forEach((button, index) => {
+          button.addEventListener("mouseenter", () => {
+            // Når musen er over knappen, skal h2 for den specifikke boks være sort
+            h2Elements[index].style.color = "var(--trueblack)";
+          });
+
+          button.addEventListener("mouseleave", () => {
+            // Hvis musen er ude af knappen og stadig er over boksen, skal h2 være gul
+            if (boxes[index].matches(":hover")) {
+              h2Elements[index].style.color = "var(--yellow)";
+            }
+          });
+        });
+      </script>
     </main>
   </body>
 </html>
