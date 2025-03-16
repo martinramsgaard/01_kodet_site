@@ -5,4 +5,63 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
+
+.flex_col {
+    margin-bottom: 4rem;
+}
+
+/* Der var noget i min css, der gjorde jeg ikke kunne implementere margin-top på class grid_1-2, og jeg har ikke kunne finde, hvilken regel, det var, der overrulede dét. Chatgbt kunne heller ikke spotte det. Derfor skriver jeg nu body foran, hvilket giver en højere specificitet, og gør reglen gældende. */
+body .grid_1-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    height: 100%;
+}
+
+.grid_1-2 .col,
+.grid_1-2 .col_order {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     height: 100%;
+}
+
+.grid_1-2 .col_order img {
+     object-fit: cover;
+     height: 100%;
+}
+
+.col_order {
+    order: -1;
+}
+
+/* OBS: Jeg kunne have opnået næsten samme resultat ved kun at bruge grid, men flex gjorde det lige en tand bedre, og gjorde at jeg kunne undgå små mellemrum i bunden og toppen mellem billede og tekst. Derfor bruger jeg flex. */
+/* .grid_1-2 .col, 
+.grid_1-2 .col_order {
+    display: grid;
+    align-items: stretch;
+}
+
+.grid_1-2 .col_order img {
+    object-fit: cover;
+    height: 100%;
+} */
+
+
+}
+
+
+
+
+@media (width <=799px) {
+    .col h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .col_order img {
+        margin-top: 1rem;
+    }
 }

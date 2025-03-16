@@ -9,6 +9,8 @@
 img {
     display: block;
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 video {
@@ -24,23 +26,22 @@ video {
     --yellow: #EEF208;
     --black: #030900;
     --trueblack: #000000;
-    --h1-h2-article_size: 1.875rem;
-    --h1-article_lineheight: 2.25rem;
+    --h1-h2-article_size: 2rem;
+    --h1-article_lineheight: 2.375rem;
     --h2-article_lineheight: 2.125rem;
     --h2-boks_size: 1.375rem;
     --h3-boks_size: 2rem;
-    --p_letter-spacing: 0.1rem;
 }
 
 body {
     background-color: var(--black);
 }
 
-main {
+ /* Nedenstående gør, at indstillinger for main gælder på alt undtagen .flex_col-artikel. Det gør, at videoerne i toppen fylder hele skærmen i width på artiklerne */
+main > *:not(.flex_col-artikel) {
     max-width: 1300px;
     margin: 0 auto;
     padding: 1rem;
-    padding-top: 5rem;
 }
 
 h1 {
@@ -62,13 +63,21 @@ h3 {
 
 p {
     font-family: "Open Sans", sans-serif;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     color: var(--white);
+    letter-spacing: 0.1rem;
 }
 
 a {
     text-decoration: none;
 }
+  
+  /* Undtagelse for logo-billede inde i navbaren */
+  .navbar img {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
 
 
 /* index.html */
@@ -134,8 +143,7 @@ a {
     color: #E40606;
 }
 
-
-/* tophistorier.html */
+/* navbar */
 
 .navbar {
     position: fixed;
@@ -159,7 +167,7 @@ a {
 }
 
 .tilbage:hover {
-    background-color: #0F2305;
+    background-color: #163507;
 }
 
 .logo {
@@ -172,6 +180,9 @@ a {
     opacity: 100%;
 }
 
+
+/* tophistorier.html */
+
 .overskrift {
     color: var(--white);
     text-align: center;
@@ -180,13 +191,13 @@ a {
 
 .overskrift h1 {
     font-size: 3.7rem;
-    margin-top: 1.5rem;
     margin-bottom: 2.5rem;
+    padding-top: 5rem;
 }
 
 .overskrift h2 {
     font-size: 1.5625rem;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 }
 
 .flex_col {
@@ -196,8 +207,21 @@ a {
     justify-content: center;
     position: relative;
     text-align: center;
-    height: 50vh; /* boks-video er 60vh, men jeg sætter bevidst denne til 50vh kun. Det gør, at jeg slipper for at lave margin top/bottom på h2 og h3. Der er nemlig problemer med border på h2 button, når jeg har margin-bottom på h2 for at rykke den længere op i boksen. Derfor bliver dette løsningen med øget margin-bottom på h2'en udenfor boksen */
+    height: 50vh; /* boks-video er 60vh, men jeg sætter bevidst denne til 50vh kun. Det gør, at jeg slipper for at lave margin top/bottom på h2 og h3. */
     margin-bottom: 8.5rem;
+}
+
+#boks3 {
+    margin-bottom: 4rem;
+}
+
+.boks-video {
+    position: absolute;
+    object-fit: cover;
+    z-index: 1;
+    width: 92vw;
+    height: 60vh;
+    border-radius: 5vh;
 }
 
 .boks_1-content {
@@ -214,21 +238,12 @@ a {
 }
 
 .boks_1-content h2 {
-    color: var(--trueblack);
+    color: var(--yellow);
     font-size: var(--h2-boks_size);
 }
 
-.boks-video {
-    position: absolute;
-    object-fit: cover;
-    z-index: 1;
-    width: 92vw;
-    height: 60vh;
-    border-radius: 5vh;
-}
-
 .button {
-    border: 1px solid var(--trueblack);
+    border: 1px solid var(--yellow);
     border-radius: 3.1875rem;
     display: inline-block;
     padding: 0.5rem;
@@ -237,7 +252,7 @@ a {
     padding-right: 1rem;
 }
 
-/* Lidt kringlet. Men for at vi kan få js til at gælde på én boks ad gangen, har jeg været nødt til at give et unikt id-navn til hver. */
+/* Lidt kringlet. Men for at vi kan få js til at gælde på én boks ad gangen, har jeg været nødt til at give et unikt id-navn til hver. Og hvis ikke man gør det på hvert element, så gør js-funktionen sig ikke gældende på de elementer, man hover over, som ikke er nævnt her. Derfor nævnes ALLE elementer inde i flex_col */
 #boks1:hover .boks-video,
 #boks2:hover .boks-video,
 #boks3:hover .boks-video {
@@ -263,4 +278,66 @@ a {
 #boks2 .button:hover,
 #boks3 .button:hover {
     background-color: var(--yellow);
+}
+
+
+/* artikel_1.html */
+
+.flex_col-artikel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 30vh;
+    padding-top: 7rem;
+    width: 100vw;
+    max-width: none;
+}
+
+.artikel-video {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 30vh;
+    opacity: 70%;
+    z-index: 1;
+}
+
+.artikel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.artikel-content h1 {
+    font-size: var(--h1-h2-article_size);
+    line-height: var(--h1-article_lineheight);
+    color: var(--yellow);
+}
+
+#col_start {
+    margin-top: 4rem;
+}
+
+.col h2,
+#col h2 {
+    color: var(--yellow);
+    font-size: var(--h1-h2-article_size);
+    line-height: var(--h2-article_lineheight);
+}
+
+.col_order img {
+    filter: grayscale(100%);
+}
+
+#col h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#col img {
+    margin-top: 1rem;
 }
