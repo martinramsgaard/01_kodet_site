@@ -8,9 +8,10 @@
 
 img {
     display: block;
-    max-width: 100%;
+    /* max-width: 100%; */
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 }
 
 video {
@@ -26,14 +27,17 @@ video {
     --yellow: #EEF208;
     --black: #030900;
     --trueblack: #000000;
-    --h1-h2-article_size: 2rem;
-    --h1-article_lineheight: 2.375rem;
+    --h1-article_size: 2.6rem;
+    --h1-article_size-desktop: 4.7rem;
+    --h2-article_size: 2rem;
+    --h1-article_lineheight: 3rem;
+    --h1-article_lineheight-desktop: 5rem;
     --h2-article_lineheight: 2.125rem;
     --h2-boks_size: 1.375rem;
     --h3-boks_size: 2rem;
 }
 
-body {
+html, body {
     background-color: var(--black);
 }
 
@@ -72,12 +76,48 @@ a {
     text-decoration: none;
 }
   
-  /* Undtagelse for logo-billede inde i navbaren */
-  .navbar img {
+/* Undtagelse for logo-billede inde i navbaren */
+.navbar img {
     margin-top: 0;
     margin-bottom: 0;
-  }
-  
+}
+
+/* navbar */
+
+.navbar {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--black);
+    padding: 0.3rem 1rem;
+}
+
+.tilbage {
+    font-size: 0.7rem;
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: 5vw;
+    display: inline-block;
+    padding: 0.5rem;
+    justify-self: start;
+}
+
+.tilbage:hover {
+    background-color: #163507;
+}
+
+.logo {
+    width: 3rem;
+    justify-self: center;
+    opacity: 70%;
+}
+
+.logo:hover {
+    opacity: 100%;
+}
 
 
 /* index.html */
@@ -143,45 +183,12 @@ a {
     color: #E40606;
 }
 
-/* navbar */
-
-.navbar {
-    position: fixed;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    z-index: 1000;
-    width: 100%;
-    background-color: var(--black);
-    padding: 0.3rem 1rem;
-}
-
-.tilbage {
-    font-size: 0.7rem;
-    color: var(--white);
-    border: 1px solid var(--white);
-    border-radius: 5vw;
-    display: inline-block;
-    padding: 0.5rem;
-    justify-self: start;
-}
-
-.tilbage:hover {
-    background-color: #163507;
-}
-
-.logo {
-    width: 3rem;
-    justify-self: center;
-    opacity: 70%;
-}
-
-.logo:hover {
-    opacity: 100%;
-}
-
 
 /* tophistorier.html */
+
+body.tophistorier {
+    background: linear-gradient(to bottom, #000000 18%, #474747 50%, #000000 75%);
+}
 
 .overskrift {
     color: var(--white);
@@ -191,13 +198,13 @@ a {
 
 .overskrift h1 {
     font-size: 3.7rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     padding-top: 5rem;
 }
 
 .overskrift h2 {
     font-size: 1.5625rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .flex_col {
@@ -207,12 +214,12 @@ a {
     justify-content: center;
     position: relative;
     text-align: center;
-    height: 50vh; /* boks-video er 60vh, men jeg sætter bevidst denne til 50vh kun. Det gør, at jeg slipper for at lave margin top/bottom på h2 og h3. */
-    margin-bottom: 8.5rem;
+    height: 45vh; /* boks-video er 60vh, men jeg sætter bevidst denne til 50vh kun. Det gør, at jeg slipper for at lave margin top/bottom på h2 og h3. */
+    margin-bottom: 5rem;
 }
 
 #boks3 {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .boks-video {
@@ -220,7 +227,7 @@ a {
     object-fit: cover;
     z-index: 1;
     width: 92vw;
-    height: 60vh;
+    height: 50vh;
     border-radius: 5vh;
 }
 
@@ -283,6 +290,10 @@ a {
 
 /* artikel_1.html */
 
+body.artikel_1 {
+    background: linear-gradient(to bottom, #000000 40%, #666666 100%), linear-gradient(to bottom, #000000 40%, #666666 100%) !important;
+}
+
 .flex_col-artikel {
     display: flex;
     align-items: center;
@@ -313,7 +324,7 @@ a {
 }
 
 .artikel-content h1 {
-    font-size: var(--h1-h2-article_size);
+    font-size: var(--h1-article_size);
     line-height: var(--h1-article_lineheight);
     color: var(--yellow);
 }
@@ -325,7 +336,7 @@ a {
 .col h2,
 #col h2 {
     color: var(--yellow);
-    font-size: var(--h1-h2-article_size);
+    font-size: var(--h2-article_size);
     line-height: var(--h2-article_lineheight);
 }
 

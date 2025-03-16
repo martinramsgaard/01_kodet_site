@@ -36,7 +36,6 @@ body .grid_1-2 {
 .col_order {
     order: -1;
 }
-
 /* OBS: Jeg kunne have opnået næsten samme resultat ved kun at bruge grid, men flex gjorde det lige en tand bedre, og gjorde at jeg kunne undgå små mellemrum i bunden og toppen mellem billede og tekst. Derfor bruger jeg flex. */
 /* .grid_1-2 .col, 
 .grid_1-2 .col_order {
@@ -49,6 +48,33 @@ body .grid_1-2 {
     height: 100%;
 } */
 
+
+/* Design tophistorier.html */
+.overskrift {
+    line-height: 3.5rem;
+}
+
+.overskrift h1 {
+    font-size: 6rem;
+}
+
+.overskrift h2 {
+    font-size: 2.25rem;
+}
+
+/* Design artikel_1.html */
+.flex_col-artikel {
+    height: 50vh;
+}
+
+.artikel-video {
+    height: 50vh;
+}
+
+.artikel-content h1 {
+    font-size: var(--h1-article_size-desktop);
+    line-height: var(--h1-article_lineheight-desktop);
+}
 
 }
 
