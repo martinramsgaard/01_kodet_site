@@ -61,7 +61,7 @@
       </section>
 
       <section class="grid_1-1-1">
-        <div class="flex_col" id="boks1">
+        <div class="flex_col boks">
           <video
             playsinline
             muted
@@ -69,7 +69,6 @@
             class="boks-video"
             src="videos/(v)hero(hero+main1+article1).mp4"
           ></video>
-
           <div class="boks_1-content">
             <h3>
               HVAD VAR 2010'ERNES <br />
@@ -80,7 +79,7 @@
           </div>
         </div>
 
-        <div class="flex_col" id="boks2">
+        <div class="flex_col boks">
           <video
             playsinline
             muted
@@ -88,7 +87,6 @@
             class="boks-video"
             src="videos/(v)main2(main2+article2).mp4"
           ></video>
-
           <div class="boks_1-content">
             <h3>
               DANCEHALLS STØRSTE <br />
@@ -99,7 +97,7 @@
           </div>
         </div>
 
-        <div class="flex_col" id="boks3">
+        <div class="flex_col boks" style="margin-bottom: 2rem">
           <video
             playsinline
             muted
@@ -107,7 +105,6 @@
             class="boks-video"
             src="videos/(v)main3(article3).mp4"
           ></video>
-
           <div class="boks_1-content">
             <h3>
               DANMARKS STØRSTE <br />
@@ -119,8 +116,6 @@
       </section>
 
       <script>
-        // Nedenstående js er lavet med Chatgbt.
-
         // Hent alle boks-elementerne og deres tilhørende videoer
         const boxes = document.querySelectorAll(".flex_col");
         const videos = document.querySelectorAll(".boks-video");
@@ -141,8 +136,8 @@
 
           // Når musen forlader boksen
           box.addEventListener("mouseleave", () => {
-            // Skift farven på h2 tilbage til sort (kun for den specifikke boks)
-            h2.style.color = "var(--yellow)";
+            // Skift farven på h2 tilbage til den oprindelige farve (du kan justere dette)
+            h2.style.color = ""; // Hvis du ønsker, at farven skal resettes til standard
             // Stop videoen for den pågældende boks og reset den
             video.pause();
             video.currentTime = 0;

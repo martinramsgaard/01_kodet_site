@@ -41,7 +41,7 @@
     />
   </head>
 
-  <body>
+  <body class="artikel_2">
     <header>
       <nav class="navbar">
         <a href="javascript:history.back()" class="tilbage"><h2>TILBAGE</h2></a>
@@ -88,6 +88,145 @@
           <strong>Hvor er dancehall-stjernerne i dag?</strong>
         </p>
       </div>
+
+      <section class="grid_1-1_1-1-1">
+        <div class="flex_col_2 boks">
+          <video
+            playsinline
+            muted
+            loop
+            class="boks-video_2"
+            src="videos/(v)klumben-card(article2).mp4"
+          ></video>
+
+          <div class="boks_1_2-content">
+            <h3>KLUMBEN</h3>
+            <a href="artikel_2-klumben.html" class="button"
+              ><h2>LÆS MERE</h2></a
+            >
+          </div>
+        </div>
+
+        <div class="flex_col_2 boks">
+          <video
+            playsinline
+            muted
+            loop
+            class="boks-video_2"
+            src="videos/(v)raske-penge-card(article2).mp4"
+          ></video>
+
+          <div class="boks_1_2-content">
+            <h3>RASKE PENGE</h3>
+            <a href="artikel_2.html" class="button"><h2>LÆS MERE</h2></a>
+          </div>
+        </div>
+
+        <div class="flex_col_2 boks">
+          <video
+            playsinline
+            muted
+            loop
+            class="boks-video_2"
+            src="videos/(v)shaka-loveless-card(article2).mp4"
+          ></video>
+
+          <div class="boks_1_2-content">
+            <h3>SHAKA LOVELESS</h3>
+            <a href="artikel_2.html" class="button"><h2>LÆS MERE</h2></a>
+          </div>
+        </div>
+
+        <div class="flex_col_2 boks">
+          <video
+            playsinline
+            muted
+            loop
+            class="boks-video_2"
+            src="videos/(v)eaggerstunn-card(article2).mp4"
+          ></video>
+
+          <div class="boks_1_2-content">
+            <h3>EAGGER&shy;STUNN</h3>
+            <a href="artikel_2.html" class="button"><h2>LÆS MERE</h2></a>
+          </div>
+        </div>
+
+        <div class="flex_col_2 boks">
+          <video
+            playsinline
+            muted
+            loop
+            class="boks-video_2"
+            src="videos/(v)wafande-card(article2).mp4"
+          ></video>
+
+          <div class="boks_1_2-content">
+            <h3>WAFANDE</h3>
+            <a href="artikel_2.html" class="button"><h2>LÆS MERE</h2></a>
+          </div>
+        </div>
+
+        <div class="flex_col_2 boks" style="margin-bottom: 2rem">
+          <video
+            playsinline
+            muted
+            loop
+            class="boks-video_2"
+            src="videos/(v)kaka-card(article2).mp4"
+          ></video>
+
+          <div class="boks_1_2-content">
+            <h3>KAKA</h3>
+            <a href="artikel_2.html" class="button"><h2>LÆS MERE</h2></a>
+          </div>
+        </div>
+      </section>
+      <script>
+        // Finder de relevante klassenavne dynamisk
+        const boxClasses = [".flex_col", ".flex_col_2"];
+        const videoClasses = [".boks-video", ".boks-video_2"];
+        const contentClasses = [".boks_1-content h2", ".boks_1_2-content h2"];
+
+        // Henter alle relevante elementer
+        const boxes = document.querySelectorAll(boxClasses.join(", "));
+        const videos = document.querySelectorAll(videoClasses.join(", "));
+        const h2Elements = document.querySelectorAll(contentClasses.join(", "));
+
+        // Gå igennem alle bokse og tilføj event listeners for hover-effekter
+        boxes.forEach((box, index) => {
+          const video = videos[index]; // Hent videoen for den pågældende boks
+          const h2 = h2Elements[index]; // Hent h2-elementet for den pågældende boks
+
+          // Når musen er over boksen
+          box.addEventListener("mouseenter", () => {
+            h2.style.color = "var(--yellow)";
+            video.play();
+          });
+
+          // Når musen forlader boksen
+          box.addEventListener("mouseleave", () => {
+            h2.style.color = "";
+            video.pause();
+            video.currentTime = 0;
+          });
+        });
+
+        // Tilføj hover-effekter for knappen (for at forhindre hover på h2 når musen er over knappen)
+        const buttons = document.querySelectorAll(".button");
+
+        buttons.forEach((button, index) => {
+          button.addEventListener("mouseenter", () => {
+            h2Elements[index].style.color = "var(--trueblack)";
+          });
+
+          button.addEventListener("mouseleave", () => {
+            if (boxes[index].matches(":hover")) {
+              h2Elements[index].style.color = "var(--yellow)";
+            }
+          });
+        });
+      </script>
     </main>
   </body>
 </html>

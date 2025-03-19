@@ -214,12 +214,8 @@ body.tophistorier {
     justify-content: center;
     position: relative;
     text-align: center;
-    height: 45vh; /* boks-video er 60vh, men jeg sætter bevidst denne til 50vh kun. Det gør, at jeg slipper for at lave margin top/bottom på h2 og h3. */
+    height: 45vh; /* boks-video er 50vh, men jeg sætter bevidst denne til 45vh kun. Det gør, at jeg slipper for at lave margin top/bottom på h2 og h3. */
     margin-bottom: 5rem;
-}
-
-#boks3 {
-    margin-bottom: 2rem;
 }
 
 .boks-video {
@@ -259,39 +255,28 @@ body.tophistorier {
     padding-right: 1rem;
 }
 
-/* Lidt kringlet. Men for at vi kan få js til at gælde på én boks ad gangen, har jeg været nødt til at give et unikt id-navn til hver. Og hvis ikke man gør det på hvert element, så gør js-funktionen sig ikke gældende på de elementer, man hover over, som ikke er nævnt her. Derfor nævnes ALLE elementer inde i flex_col */
-#boks1:hover .boks-video,
-#boks2:hover .boks-video,
-#boks3:hover .boks-video {
+.boks:hover .boks-video {
     border: 2px solid var(--yellow);
-}
-
-#boks1:hover .boks_1-content h3,
-#boks1:hover .boks_1-content h2,
-#boks2:hover .boks_1-content h3,
-#boks2:hover .boks_1-content h2,
-#boks3:hover .boks_1-content h3,
-#boks3:hover .boks_1-content h2 {
+  }
+  
+  .boks:hover .boks_1-content h3,
+  .boks:hover .boks_1-content h2 {
     color: var(--yellow);
-}
-
-#boks1:hover .button,
-#boks2:hover .button,
-#boks3:hover .button {
+  }
+  
+  .boks:hover .button {
     border: 1px solid var(--yellow);
-}
-
-#boks1 .button:hover,
-#boks2 .button:hover,
-#boks3 .button:hover {
+  }
+  
+  .boks .button:hover {
     background-color: var(--yellow);
-}
+  }  
 
 
 /* artikel_1.html */
 
 body.artikel_1 {
-    background: linear-gradient(to bottom, #000000 40%, #666666 100%), linear-gradient(to bottom, #000000 40%, #666666 100%) !important;
+    background: linear-gradient(to bottom, #000000 40%, #666666 100%);
 }
 
 .flex_col-artikel {
@@ -334,7 +319,7 @@ body.artikel_1 {
 }
 
 .col h2,
-#col h2 {
+.col_1 h2 {
     color: var(--yellow);
     font-size: var(--h2-article_size);
     line-height: var(--h2-article_lineheight);
@@ -344,69 +329,68 @@ body.artikel_1 {
     filter: grayscale(100%);
 }
 
-#col h2 {
+.col_1 h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
-#col img {
+.col_1 img {
     margin-top: 1rem;
 }
 
-/* #col siger: 
-h2:
-margin-top: 2rem;
-margin-bottom: 1rem;
 
-img:
-margin-top: 1rem;
+/* artikel_2.html */
 
-Bruges på:
-Raske Penge-afsnit: h2/p/img
-Cheff Records-afsnit: h2/p/img
+body.artikel_2 {
+    background: linear-gradient(to bottom, #000000 40%, #474747 60%, #000000 75%);
+}
+
+.flex_col_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 30vh; /* boks-video er 35vh, men jeg sætter bevidst denne til 30vh kun. Det gør, at jeg slipper for at lave margin top/bottom på h2 og h3. */
+    margin-top: 3rem;
+}
+
+.boks-video_2 {
+    position: absolute;
+    object-fit: cover;
+    z-index: 1;
+    width: 100vw;
+    height: 35vh;
+    border-radius: 5vh;
+}
+
+.boks_1_2-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* sætter kun height på 90% for content, for at elementerne kommer længere mod midten. */
+    height: 90%;
+    z-index: 2;
+}
+
+.boks_1_2-content h3 {
+    color: var(--yellow);
+    font-size: var(--h3-boks_size);
+}
+
+.boks_1_2-content h2 {
+    color: var(--yellow);
+    font-size: var(--h2-boks_size);
+}
+
+.boks:hover .boks-video_2 {
+    border: 2px solid var(--yellow);
+  }
 
 
+/* artikel_2-klumben.html */
 
-.col h2 siger @media (width <=799px):
-h2:
-margin-top: 2rem;
-margin-bottom: 1rem;
-
-bruges på:
-Wafande-afsnit: h2/p
-"Genrens nedgang" (lille tekststykke): h2/p
-Branco/gilli-afsnit: p
-Shakaloveless/medina-afsnit: p
-
-
-
-
-.col_order img siger @media (width <=799px):
-img:
-margin-top: 1rem;
-
-Bruges på: 
-wafande-billede
-Shakaloveless/Medina-billede
-
-
-
-
-.grid_1-2 siger @media (width >=800px):
-margin-top: 2rem;
-margin-bottom: 1rem;
-
-Bruges på:
-Wafande-afsnit: h2/p/img
-Shakaloveless/Medina-afsnit: h2/img
-
-
-
-
-.col_order siger @media (width >=800px):
-order: -1
-
-Bruges på:
-Wafande-billede
-Shakaloveless/Medina-billede
-*/
+body.artikel_2-klumben {
+    background: linear-gradient(to bottom, #000000 20%, #666666 100%);
+}
