@@ -81,6 +81,13 @@ body .grid_2-1 {
     height: 50vh;
 }
 
+.grid_1-1-songs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    height: 100%;
+}
+
 
 
 /* Design tophistorier.html */
@@ -129,6 +136,10 @@ body .grid_2-1 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+    }
+
+    .flex_col-songs {
+        margin-bottom: 2rem;
     }
 }
 

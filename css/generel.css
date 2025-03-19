@@ -65,6 +65,15 @@ h3 {
     letter-spacing: 0.1rem;
 }
 
+h4 {
+    font-family: "Protest Strike", sans-serif;
+    line-height: 2.375rem;
+    letter-spacing: 0.1rem;
+    color: var(--yellow);
+    font-size: 1.375rem;
+    text-align: center;
+}
+
 p {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
@@ -396,3 +405,92 @@ body.artikel_2-klumben {
 }
 
 /* artikel_3.html */
+body.artikel_3 {
+    background: linear-gradient(to bottom, #000000 30%, #474747 70%, #000000 100%);
+}
+
+.youtube-button {
+    border: 1px solid var(--white);
+    border-radius: 3.1875rem;
+    display: inline-block;
+    padding: 0.5rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.youtube-button:hover {
+    background-color: var(--white);
+}
+
+.spotify-button {
+    border: 1px solid var(--trueblack);
+    border-radius: 3.1875rem;
+    display: inline-block;
+    padding: 0.5rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.spotify-button:hover {
+    background-color: var(--trueblack);
+}
+
+.boks-songs-content_h3-h4 h3 {
+    font-size: var(--h3-boks_size);
+    color: var(--yellow);
+    text-align: center;
+}
+
+.flex_col-songs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    justify-content: space-between;
+    height: 55vh;
+    margin-bottom: 1rem;
+}
+
+.boks-video-songs {
+    position: absolute;
+    object-fit: cover;
+    z-index: 1;
+    height: 55vh;
+    border-radius: 5vh;
+}
+
+.boks-songs-content_h3-h4 {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    margin-top: 2rem;
+}
+
+.boks-songs-content-p {
+    background-color: rgba(3, 9, 0, 0.2);
+    max-width: 90%;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: auto;
+    z-index: 1;
+}
+
+.button-songs {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 2;
+}
+
+.boks:hover .boks-video-songs {
+    border: 2px solid var(--yellow);
+  }
