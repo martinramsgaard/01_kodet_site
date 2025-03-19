@@ -352,3 +352,61 @@ body.artikel_1 {
 #col img {
     margin-top: 1rem;
 }
+
+/* #col siger: 
+h2:
+margin-top: 2rem;
+margin-bottom: 1rem;
+
+img:
+margin-top: 1rem;
+
+Bruges på:
+Raske Penge-afsnit: h2/p/img
+Cheff Records-afsnit: h2/p/img
+
+
+
+.col h2 siger @media (width <=799px):
+h2:
+margin-top: 2rem;
+margin-bottom: 1rem;
+
+bruges på:
+Wafande-afsnit: h2/p
+"Genrens nedgang" (lille tekststykke): h2/p
+Branco/gilli-afsnit: p
+Shakaloveless/medina-afsnit: p
+
+
+
+
+.col_order img siger @media (width <=799px):
+img:
+margin-top: 1rem;
+
+Bruges på: 
+wafande-billede
+Shakaloveless/Medina-billede
+
+
+
+
+.grid_1-2 siger @media (width >=800px):
+margin-top: 2rem;
+margin-bottom: 1rem;
+
+Bruges på:
+Wafande-afsnit: h2/p/img
+Shakaloveless/Medina-afsnit: h2/img
+
+
+
+
+.col_order siger @media (width >=800px):
+order: -1
+
+Bruges på:
+Wafande-billede
+Shakaloveless/Medina-billede
+*/
