@@ -342,7 +342,7 @@ body.artikel_1 {
 /* artikel_2.html */
 
 body.artikel_2 {
-    background: linear-gradient(to bottom, #000000 40%, #474747 60%, #000000 75%);
+    background: linear-gradient(to bottom, #000000 30%, #474747 70%, #000000 100%);
 }
 
 .flex_col_2 {
@@ -394,3 +394,5 @@ body.artikel_2 {
 body.artikel_2-klumben {
     background: linear-gradient(to bottom, #000000 20%, #666666 100%);
 }
+
+/* artikel_3.html */
